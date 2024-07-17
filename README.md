@@ -1,35 +1,37 @@
 # Password Manager
 
+
 ## Project Overview
 
-This project is a Python-based password manager with a graphical user interface (GUI) built using Tkinter. The application allows users to generate secure passwords, save them along with website and email information, and store them in a local file. The generated passwords are automatically copied to the clipboard for easy use.
+This project is a Python-based password manager with a graphical user interface (GUI) built using Tkinter. The application allows users to generate secure passwords, save them along with website and email information in a JSON file, and retrieve them when needed. The generated passwords are automatically copied to the clipboard for easy use.
 
 ## Features
 
 1. **Password Generation**: Generate secure passwords with a mix of letters, numbers, and symbols.
-2. **Password Storage**: Save website, email, and password information to a local file.
-3. **Clipboard Integration**: Automatically copy the generated password to the clipboard for easy pasting.
+2. **Password Storage**: Save website, email, and password information in a JSON file.
+3. **Password Retrieval**: Search and retrieve stored passwords.
+4. **Clipboard Integration**: Automatically copy the generated password to the clipboard for easy pasting.
 
 ## Dependencies
 
 - Python 3.x
 - Tkinter (comes pre-installed with Python)
 - Pyperclip (for clipboard functionality)
-- Random (for generating random passwords)
+- JSON (for storing and retrieving password data)
 
 ## File Descriptions
 
 ### `main.py`
 
-This file contains the main logic and GUI setup for the password manager application. It includes functions for generating passwords, saving passwords, and setting up the user interface.
+This file contains the main logic and GUI setup for the password manager application. It includes functions for generating passwords, saving passwords, searching for passwords, and setting up the user interface.
 
 ### `logo.png`
 
 An image file used as the logo for the application, displayed in the GUI.
 
-### `data.txt`
+### `data.json`
 
-A text file where the saved password information is stored. Each entry includes the website, email, and password.
+A JSON file where the saved password information is stored. Each entry includes the website, email, and password.
 
 ## Getting Started
 
@@ -51,8 +53,9 @@ A text file where the saved password information is stored. Each entry includes 
 ## Usage
 
 1. **Generate Password**: Click the "Generate Password" button to create a new password. The generated password will be automatically copied to the clipboard.
-2. **Save Information**: Enter the website, email/username, and password. Click the "Save Info!" button to save the information to `data.txt`.
-3. **Clipboard Integration**: The generated password will be automatically copied to the clipboard for easy use.
+2. **Save Information**: Enter the website, email/username, and password. Click the "Save Info!" button to save the information to `data.json`.
+3. **Search for Password**: Enter the website and click the "Search" button to retrieve the stored email and password for that website.
+4. **Clipboard Integration**: The generated password will be automatically copied to the clipboard for easy use.
 
 ## Code Explanation
 
@@ -62,7 +65,13 @@ The `generate_password` function creates a secure password using a mix of letter
 
 ### Saving Password
 
-The `save` function validates the input fields and saves the website, email, and password information to `data.txt`. If any field is empty, it shows an error message.
+The `save` function validates the input fields and saves the website, email, and password information to `data.json`. If any field is empty, it shows an error message.
+
+
+### Finding Password
+
+The `find_password` function searches for the stored email and password for a given website in `data.json`.
+
 
 
 ### UI Setup
@@ -80,4 +89,4 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 ---
 
-This comprehensive readme should help you understand the structure and functionality of the password manager application. If you have any questions or need further assistance, please feel free to ask.
+This comprehensive readme should help you understand the structure and functionality of my password manager application. If you have any questions or need further assistance, please feel free to reach out :)
